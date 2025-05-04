@@ -1,0 +1,115 @@
+/* Box-sizing для всіх елементів */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Встановлюємо базову висоту шрифтів та лінійний відступ */
+html {
+  font-size: 100%; /* базовий розмір шрифтів */
+  line-height: 1.15; /* базова висота рядка */
+  -webkit-text-size-adjust: 100%; /* для Safari */
+  -ms-text-size-adjust: 100%; /* для IE */
+}
+
+/* Скидаємо стандартні стилі для body */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #333; /* базовий колір тексту */
+  background-color: #fff; /* фон за замовчуванням */
+}
+
+/* Для заголовків */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Виправлення відступів для списків */
+ul, ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Для таблиць */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Скидання стилів для зображень */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Виправлення для форми */
+input, textarea, select, button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Заміна стандартного вигляду кнопок */
+button {
+  cursor: pointer;
+}
+
+/* Виправлення для посилань */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Виправлення для абзаців */
+p {
+  margin: 0;
+}
+
+/* Скидаємо відступи для дефолтних елементів */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+}
+
+/* Скидаємо блокові елементи */
+address {
+  font-style: normal;
+}
+
+/* Скидання стилів для фігур */
+figure {
+  margin: 0;
+}
+
+/* Виправлення для форм */
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 2px solid #999;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background-color: #3498db;
+  border-color: #3498db;
+}

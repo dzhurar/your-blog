@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <script src="./index.js"></script>
+    <div class="container">
+      <button id="loadBtn">Load posts</button>
+        <form class="createPostForm">
+        <input id="addTitle" required class="createFormInput" type="text">
+        <input id="addArticle" required class="createFormInput" type="text">
+        <button id="addPost">Post</button>
+        </form>
+        <ul id="postsList">
+            
+        </ul>
+    </div>
+    <template id="postTemplate">
+        <li class="post">
+            <button class="clickbtn" onclick="deletePost({{id}})">X</button>
+          <div class="post-head-wrap">
+            <h2 class="title">{{title}}</h2>
+            <p class="date">{{date}}</p>
+          </div>
+          <p class="article">{{article}}</p>
+          <div class="comments">
+            <!-- <button onclick="console.log({{id}})">open</button> -->
+            <ul class="comments-list">
+              {{#each comments}}
+                <li class="comment">{{text}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </li>
+      </template>
+    <script src="index.js"></script>
 </body>
 </html>

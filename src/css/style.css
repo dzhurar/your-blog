@@ -1,0 +1,42 @@
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+.createPostForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+.createFormInput{
+    border: 1px solid black;
+}
+#postsList{
+ display: flex;
+ flex-direction: column;
+ gap: 25px;
+}
+.comments-list{
+    /* display: none; */
+    padding: 20px;
+    list-style: disc;
+}
+.post{
+    border: 1px solid black;
+    width: 350px;
+    padding: 10px;
+    position: relative;
+}
+.clickbtn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.post-head-wrap{
+    display: flex;
+    align-items: end;
+    gap: 12px;
+}
