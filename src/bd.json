@@ -1,24 +1,50 @@
 {
   "posts": [
     {
-      "id": "46c3",
-      "title": "lirili",
-      "article": "Spaghettini Alfredo Linguine Marcello Bambinaccio Rizzardo Mozzarello Donatello Vespalini Enzo Calzonetti Romano Ciaobello Antonio Amatriciano Valentino Cacciatore Gennaro Marinaro Salvatore Pistacchio Lorenzo Risottini Peppino Rigatone Carlo Espresso Bellissimo Tortelloni Giulio Pomodorino Niccolò Ricottone Vincenzo Pesto Giuseppe Tiramisu Luigi Prosciuttone Fabrizio Maccaroni Alfredo Panettoni Mario Mozzafiato",
-      "date": "04.05.2025",
-      "comments": []
+      "id": "2ef3",
+      "date": "01.05.2025",
+      "title": "First post",
+      "article": "This is the very first post",
+      "comments": [
+        {
+          "id": 1,
+          "text": "this is comment one to post 1"
+        },
+        {
+          "id": 2,
+          "text": "this is comment two to post 1"
+        },
+        {
+          "id": 3,
+          "text": "this is comment three to post 1"
+        }
+      ]
     },
     {
-      "id": "4b44",
-      "title": "sas",
-      "article": "dasasdasd",
-      "date": "04.05.2025",
-      "comments": []
+      "id": "3cf3",
+      "date": "02.05.2025",
+      "title": "Second post has been deployed a long time",
+      "article": "This is very second post",
+      "comments": [
+        {
+          "id": 1,
+          "text": "this is comment one to post 2"
+        },
+        {
+          "id": 2,
+          "text": "this is comment two to post 2"
+        },
+        {
+          "id": 3,
+          "text": "this is comment three to post 2"
+        }
+      ]
     },
     {
-      "id": "b92d",
-      "title": "sd",
-      "article": "asdasfsdfsdfsd",
-      "date": "04.05.2025",
+      "id": "0e91",
+      "title": "Do you understand?",
+      "article": "lorem ipsum dolorem sit amet",
+      "date": "09.05.2025",
       "comments": []
     }
   ]
