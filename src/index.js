@@ -106,25 +106,14 @@ list.addEventListener('click', event => {
             id: nanoid(8),
             text: `${input.value.trim()}`
         }
-
-        try {
-        fetch(`http://localhost:3000/posts/${id}`)
-        .then(res => res.json())
-        .then(post => {
-            const comments = post.comments;
-            
-            comments.push(newComment)
-            sendnewComments(sendCommentFor, comments);
-        })
-    } catch (error) {
-        
-    }
-
-        input.value = '';
+        postComment(sendCommentFor, newComment)
+    } else if(event.target.closest('.delete-comment-button')){
+        const deleteCommentBtn = event.target.closest('.delete-comment-button');
+        const deleteCommentId = deleteCommentBtn.dataset.deletecommentid;
+        const deleteCommentPostId = deleteCommentBtn.dataset.deletefrompost;
+        sendDeleteRequest(deleteCommentId, deleteCommentPostId);
     }
 });
-
-
 
 // redact post
 let editingPostId;
@@ -178,41 +167,44 @@ function hideComments(id){
     comments.classList.remove('visible');
 }
 // post comment (index.js - 100)
-// async function postComment(id, comment){
-//     try {
-//         await fetch(`http://localhost:3000/posts/${id}`)
-//         .then(res => res.json())
-//         .then(post => {
-//             const comments = post.comments;
+async function postComment(id, comment){
+    try {
+        await fetch(`http://localhost:3000/posts/${id}`)
+        .then(res => res.json())
+        .then(post => {
+            const comments = post.comments;
             
-//             comments.push(comment)
-//             console.log(comments)
-//         })
-//     } catch (error) {
+            comments.push(comment)
+            sendNewComments(id, comments)
+        })
+    } catch (error) {
         
-//     }
-// }
-// postComment("3cf3", {
-//           "id": 4,
-//           "text": "Ilie in the green grass"
-//         })
-// async function sendComment(comments){
-//     try {
-//         await fetch()
-//     } catch (error) {
-        
-//     }
-// }
-async function sendnewComments(id, comments){
+    }
+}
+async function sendNewComments(id, comments){
     try {
         await fetch(`http://localhost:3000/posts/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ comments: comments })
+            body: JSON.stringify({comments}),
         });
         getPosts()
+    } catch (error) {
+        console.error(error)
+    }
+}
+// delete comment
+async function sendDeleteRequest(commentId, postId) {
+    try {
+        await fetch(`http://localhost:3000/posts/${postId}`)
+        .then(res => res.json())
+        .then(post => {
+            const comments = post.comments;
+            const updatedComments = comments.filter(comment => comment.id !== commentId)
+            sendNewComments(postId, updatedComments)
+        })
     } catch (error) {
         console.error(error)
     }

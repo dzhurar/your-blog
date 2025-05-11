@@ -45,7 +45,12 @@
       "title": "Do you understand?",
       "article": "lorem ipsum dolorem sit amet",
       "date": "09.05.2025",
-      "comments": []
+      "comments": [
+        {
+          "id": "RzZIUF7n",
+          "text": "sasasas"
+        }
+      ]
     }
   ]
 }

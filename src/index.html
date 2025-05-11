@@ -38,7 +38,7 @@
             </label>
             <ul class="comments-list">
               {{#each comments}}
-                <li data-comment-id="{{id}}" class="comment">{{text}}</li>
+                <li><p data-comment-id="{{id}}" class="comment">{{text}}</p><button class="delete-comment-button" data-deleteFromPost="{{../id}}" data-deleteCommentId="{{id}}">🗑</button></li>
               {{/each}}
             </ul>
           </div>
